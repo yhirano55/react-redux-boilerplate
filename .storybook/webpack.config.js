@@ -5,14 +5,50 @@
 // IMPORTANT
 // When you add this file, we won't add the default configurations which is similar
 // to "React Create App". This only has babel loader to load JavaScript.
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js']
+  },
   plugins: [
     // your custom plugins
   ],
   module: {
+    // add your custom rules.
     rules: [
-      // add your custom rules.
+      {
+        test: /\.js$/,
+        exclude: [/node_modules/],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            forceEnv: 'development:client'
+          }
+        }
+      },
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: 'awesome-typescript-loader',
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          'css-loader?modules&importLoaders=1&localIdentName=[name]--[local]--[hash:base64:5]',
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              plugins: [
+                autoprefixer()
+              ]
+            }
+          },
+        ],
+      },
     ],
   },
 };

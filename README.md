@@ -9,7 +9,7 @@
 - [x] TypeScript
 - [ ] lint
 - [x] CSSModule
-- [ ] Storybook
+- [x] Storybook
 - [ ] Jest
 - [ ] axios
 - [ ] react-redux
