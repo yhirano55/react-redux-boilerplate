@@ -16,3 +16,5 @@
 - [ ] react-router
 - [ ] Sentry
 - [ ] SSR
+- [ ] Uglifier
+- [ ] Normalize.css
