@@ -19,7 +19,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: [/node_modules/],
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -29,12 +29,10 @@ module.exports = {
       },
       {
         test: /\.tsx?$/,
-        exclude: /node_modules/,
         use: 'awesome-typescript-loader',
       },
       {
         test: /\.css$/,
-        exclude: /node_modules/,
         use: [
           'style-loader',
           'css-loader?modules&importLoaders=1&localIdentName=[name]--[local]--[hash:base64:5]',

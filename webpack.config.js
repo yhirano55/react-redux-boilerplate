@@ -22,7 +22,6 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        exclude: /node_modules/,
         use: 'awesome-typescript-loader',
       },
       {
@@ -33,7 +32,6 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: /node_modules/,
         use: [
           'style-loader',
           'css-loader?modules&importLoaders=1&localIdentName=[name]--[local]--[hash:base64:5]',

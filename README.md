@@ -17,4 +17,4 @@
 - [ ] Sentry
 - [ ] SSR
 - [ ] Uglifier
-- [ ] Normalize.css
+- [x] Normalize.css
