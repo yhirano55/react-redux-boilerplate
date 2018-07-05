@@ -8,7 +8,7 @@
 - [x] html-webpack-plugin
 - [ ] TypeScript
 - [ ] lint
-- [ ] CSSModule
+- [x] CSSModule
 - [ ] Storybook
 - [ ] Jest
 - [ ] react-redux
