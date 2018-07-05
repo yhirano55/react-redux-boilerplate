@@ -1,11 +1,9 @@
-import * as path from 'path';
-import * as webpack from 'webpack';
-import * as autoprefixer from 'autoprefixer';
-import * as htmlWebpackPlugin from 'html-webpack-plugin';
+const path = require('path');
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
+const htmlWebpackPlugin = require('html-webpack-plugin');
 
-const mode: string = process.env.NODE_ENV || 'development';
-
-const config: webpack.Configuration = {
+module.exports = {
   mode: process.env.WEBPACK_SERVE ? 'development' : 'production',
   entry: './src/main.tsx',
   output: {
@@ -53,5 +51,3 @@ const config: webpack.Configuration = {
     ]
   }
 }
-
-export default config;
