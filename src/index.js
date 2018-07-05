@@ -1,9 +1,8 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
-const App = (props) => {
-  return (
-    <p>Hello, React</p>
-  )
-}
+const App = (props) => (
+  <p>Hello, {props.name}</p>
+)
 
-console.log('Hello, JavaScript');
+ReactDOM.render(<App name="React" />, document.getElementById('root'));
