@@ -10,11 +10,14 @@
 - [ ] lint
 - [x] CSSModule
 - [x] Storybook
-- [ ] Jest
+- [x] Jest
 - [ ] axios
 - [ ] react-redux
 - [ ] react-router
 - [ ] Sentry
 - [ ] SSR
 - [ ] Uglifier
+- [ ] extract-text-webpack-plugin
 - [x] Normalize.css
+- [ ] Extract `process.env` with webpack.DefinePlugin in client
+- [ ] Chunk
