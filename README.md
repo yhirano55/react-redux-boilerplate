@@ -11,6 +11,7 @@
 - [x] CSSModule
 - [x] Storybook
 - [x] Jest
+- [x] enzyme
 - [ ] axios
 - [ ] react-redux
 - [ ] react-router
