@@ -1,18 +1,19 @@
-'use strict';
+import * as path from 'path';
+import * as webpack from 'webpack';
+import * as autoprefixer from 'autoprefixer';
+import * as htmlWebpackPlugin from 'html-webpack-plugin';
 
-const path = require('path');
-const htmlWebpackPlugin = require('html-webpack-plugin');
-const autoprefixer = require('autoprefixer');
+const mode: string = process.env.NODE_ENV || 'development';
 
-module.exports = {
-  mode: 'development',
-  entry: './src/index.js',
+const config: webpack.Configuration = {
+  mode: process.env.WEBPACK_SERVE ? 'development' : 'production',
+  entry: './src/main.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['.js', '.css', '.html']
+    extensions: ['.ts', '.tsx', '.js', '.json', '.css', '.html']
   },
   plugins: [
     new htmlWebpackPlugin({
@@ -22,14 +23,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['env', 'react']
-          }
-        },
+        use: 'awesome-typescript-loader',
+      },
+      {
+        test: /\.js$/,
+        enforce: 'pre',
+        exclude: /node_modules/,
+        loader: 'source-map-loader',
       },
       {
         test: /\.css$/,
@@ -45,9 +47,11 @@ module.exports = {
                 autoprefixer()
               ]
             }
-          }
-        ]
-      }
+          },
+        ],
+      },
     ]
   }
 }
+
+export default config;

@@ -6,11 +6,12 @@
 - [x] webpack-serve
 - [x] babel
 - [x] html-webpack-plugin
-- [ ] TypeScript
+- [x] TypeScript
 - [ ] lint
 - [x] CSSModule
 - [ ] Storybook
 - [ ] Jest
+- [ ] axios
 - [ ] react-redux
 - [ ] react-router
 - [ ] Sentry
