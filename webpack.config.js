@@ -2,11 +2,18 @@ const path = require('path')
 const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
 const htmlWebpackPlugin = require('html-webpack-plugin')
-require('dotenv').config()
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const mode = process.env.NODE_ENV || 'development'
 const isProduction = mode === 'production'
 const outputFilename = isProduction ? 'bundle.[chunkhash].js' : '[name].js'
+const outputCssFilename = isProduction ? 'bundle.[chunkhash].css' : '[name].css'
+
+require('dotenv').config()
+const constants = {
+  'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+  'SENTRY_DSN': JSON.stringify(process.env.SENTRY_DSN),
+}
 
 module.exports = {
   mode: mode,
@@ -22,12 +29,13 @@ module.exports = {
     new htmlWebpackPlugin({
       template: './src/index.html'
     }),
+    new ExtractTextPlugin({
+      filename: outputCssFilename,
+      allChunks: true
+    }),
     new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-        'SENTRY_DSN': JSON.stringify(process.env.SENTRY_DSN),
-      }
-    })
+      'process.env': constants
+    }),
   ],
   module: {
     rules: [
@@ -43,19 +51,21 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader?modules&importLoaders=1&localIdentName=[name]--[local]--[hash:base64:5]',
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              plugins: [
-                autoprefixer()
-              ]
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader?modules,importLoaders=1&localIdentName=[name]-[local]-[hash:base64:5]',
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: true,
+                plugins: [
+                  autoprefixer()
+                ]
+              }
             }
-          },
-        ],
+          ]
+        })
       },
     ]
   }

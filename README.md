@@ -14,7 +14,7 @@
 - [x] Jest
 - [x] enzyme
 - [x] Uglifier (by default)
-- [ ] extract-text-webpack-plugin
+- [x] extract-text-webpack-plugin
 - [x] Extract `process.env` with webpack.DefinePlugin in client
 - [x] Chunk
 - [ ] axios
