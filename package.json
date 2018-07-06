@@ -7,6 +7,7 @@
     "start": "webpack-serve",
     "build:dev": "webpack --mode development --watch --progress",
     "build": "webpack --mode production",
+    "fmt": "prettier --config .prettierrc --write 'src/**'",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "storybook": "start-storybook -p 6006",

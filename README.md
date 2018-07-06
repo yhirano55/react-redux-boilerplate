@@ -7,7 +7,8 @@
 - [x] babel
 - [x] html-webpack-plugin
 - [x] TypeScript
-- [ ] lint
+- [ ] tslint
+- [x] prettier
 - [x] CSSModule
 - [x] Storybook
 - [x] Jest
@@ -22,3 +23,4 @@
 - [x] Normalize.css
 - [ ] Extract `process.env` with webpack.DefinePlugin in client
 - [ ] Chunk
+- [ ] Dockerfile
