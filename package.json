@@ -63,7 +63,10 @@
     "webpack-serve": "^1.0.4"
   },
   "dependencies": {
+    "dotenv": "^6.0.0",
     "normalize.css": "^8.0.0",
+    "raven": "^2.6.3",
+    "raven-js": "^3.26.3",
     "react": "^16.4.1",
     "react-css-modules": "^4.7.3",
     "react-dom": "^16.4.1"
