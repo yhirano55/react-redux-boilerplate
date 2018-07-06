@@ -1,8 +1,10 @@
 import * as React from "react"
-import * as styles from "../stylesheets/App.css"
+import { Provider } from "react-redux"
+import createStore from "../store/createStore"
+import Counter from "./organisms/counter"
 
-export default class App extends React.Component {
-  public render(): JSX.Element {
-    return <p className={styles.title}>Hello, World</p>
-  }
-}
+export default () => (
+  <Provider store={createStore()}>
+    <Counter />
+  </Provider>
+)

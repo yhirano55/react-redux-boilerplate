@@ -4,4 +4,4 @@ import 'normalize.css';
 
 import App from '../src/components/App';
 
-storiesOf('Components', module).add('App', () => <App />);
+storiesOf('root', module).add('App', () => <App />);

@@ -17,9 +17,10 @@
 - [x] extract-text-webpack-plugin
 - [x] Extract `process.env` with webpack.DefinePlugin in client
 - [x] Chunk
-- [ ] axios
-- [ ] react-redux
-- [ ] react-router
+- [x] axios
+- [x] react-redux
+- [x] react-router
+- [x] recompose
 - [x] Sentry
 - [ ] SSR
 - [x] Normalize.css

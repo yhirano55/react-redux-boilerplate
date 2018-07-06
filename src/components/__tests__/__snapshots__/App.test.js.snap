@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> with normal scenario should display App 1`] = `
+<div>
+  <div>
+    <h1>
+      Counter
+    </h1>
+    <span>
+      value: 
+      0
+    </span>
+    <div>
+      <button
+        onClick={[Function]}
+      >
+        add:3
+      </button>
+       
+      <button
+        onClick={[Function]}
+      >
+        increment
+      </button>
+    </div>
+  </div>
+</div>
+`;
