@@ -1,15 +1,19 @@
-const path = require('path');
-const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
-const htmlWebpackPlugin = require('html-webpack-plugin');
-require('dotenv').config();
+const path = require('path')
+const webpack = require('webpack')
+const autoprefixer = require('autoprefixer')
+const htmlWebpackPlugin = require('html-webpack-plugin')
+require('dotenv').config()
+
+const mode = process.env.NODE_ENV || 'development'
+const isProduction = mode === 'production'
+const outputFilename = isProduction ? 'bundle.[chunkhash].js' : '[name].js'
 
 module.exports = {
-  mode: process.env.WEBPACK_SERVE ? 'development' : 'production',
+  mode: mode,
   entry: './src/main.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: outputFilename
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json', '.css', '.html']

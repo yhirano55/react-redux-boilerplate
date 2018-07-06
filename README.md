@@ -13,15 +13,14 @@
 - [x] Storybook
 - [x] Jest
 - [x] enzyme
-- [ ] Uglifier
+- [x] Uglifier (by default)
 - [ ] extract-text-webpack-plugin
 - [x] Extract `process.env` with webpack.DefinePlugin in client
-- [ ] Chunk
+- [x] Chunk
 - [ ] axios
 - [ ] react-redux
 - [ ] react-router
 - [x] Sentry
-- [ ] Newrelic
 - [ ] SSR
 - [x] Normalize.css
 - [ ] Dockerfile
