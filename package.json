@@ -5,9 +5,10 @@
   "main": "src/main.tsx",
   "scripts": {
     "start": "webpack-serve",
-    "build:dev": "webpack --mode development --watch --progress",
     "build": "webpack --mode production",
-    "fmt": "prettier --config .prettierrc --write 'src/**'",
+    "build:dev": "webpack --mode development --watch --progress",
+    "lint": "tslint src/**/*.ts src/**/*.tsx --format stylish",
+    "fmt": "prettier --config .prettierrc --write 'src/**' && tslint src/**/*.ts src/**/*.tsx --fix",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "storybook": "start-storybook -p 6006",
