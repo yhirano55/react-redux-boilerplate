@@ -15,12 +15,13 @@
 - [x] enzyme
 - [ ] Uglifier
 - [ ] extract-text-webpack-plugin
-- [ ] Extract `process.env` with webpack.DefinePlugin in client
+- [x] Extract `process.env` with webpack.DefinePlugin in client
 - [ ] Chunk
 - [ ] axios
 - [ ] react-redux
 - [ ] react-router
-- [ ] Sentry
+- [x] Sentry
+- [ ] Newrelic
 - [ ] SSR
 - [x] Normalize.css
 - [ ] Dockerfile

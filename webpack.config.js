@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+require('dotenv').config();
 
 module.exports = {
   mode: process.env.WEBPACK_SERVE ? 'development' : 'production',
@@ -16,6 +17,12 @@ module.exports = {
   plugins: [
     new htmlWebpackPlugin({
       template: './src/index.html'
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        'SENTRY_DSN': JSON.stringify(process.env.SENTRY_DSN),
+      }
     })
   ],
   module: {

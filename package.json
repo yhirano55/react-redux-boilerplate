@@ -4,9 +4,9 @@
   "description": "",
   "main": "src/main.tsx",
   "scripts": {
-    "start": "webpack-serve",
-    "build": "webpack --mode production",
-    "build:dev": "webpack --mode development --watch --progress",
+    "start": "NODE_ENV=development webpack-serve",
+    "build": "NODE_ENV=production webpack --mode production",
+    "build:dev": "NODE_ENV=production webpack --mode development --watch --progress",
     "lint": "tslint src/**/*.ts src/**/*.tsx --format stylish",
     "fmt": "prettier --config .prettierrc --write 'src/**' && tslint src/**/*.ts src/**/*.tsx --fix",
     "test": "jest",
