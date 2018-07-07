@@ -1,5 +1,5 @@
 import * as React from "react"
-import * as styles from "../../stylesheets/templates/DefaultLayout.css"
+import * as styles from "./DefaultLayout.css"
 
 type Props = {
   children: any

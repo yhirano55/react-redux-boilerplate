@@ -1,7 +1,7 @@
 import * as React from "react"
 import { connect } from "react-redux"
 import { State as RootState } from "../../../reducers"
-import * as CounterActions from "../../../reducers/counter"
+import { counterActions } from "../../../actions"
 import Counter from "./Counter"
 
 type OuterProps = {}
@@ -20,8 +20,8 @@ const mapStateToProps = (state: RootState, props: OuterProps): Props => {
 const enhancer = connect(
   mapStateToProps,
   {
-    add: CounterActions.add,
-    increment: CounterActions.increment
+    add: counterActions.add,
+    increment: counterActions.increment
   }
 )
 

@@ -1,6 +1,6 @@
 import * as React from "react"
 import { connect } from "react-redux"
-import * as styles from "../../../stylesheets/organisms/counter/Counter.css"
+import * as styles from "./Counter.css"
 import Button from "../../atoms/Button"
 import DefaultLayout from "../../templates/DefaultLayout"
 

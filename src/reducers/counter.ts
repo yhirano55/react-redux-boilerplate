@@ -1,38 +1,5 @@
-// Action
+import { counterConstants } from "../constants"
 
-const ADD = "counter/add"
-const INCREMENT = "counter/increment"
-
-export type Add = {
-  type: typeof ADD
-  payload: {
-    amount: number
-  }
-}
-
-export type Increment = {
-  type: typeof INCREMENT
-}
-
-type Action = Add | Increment
-
-// Action Creator
-export function add(amount: number): Add {
-  return {
-    type: ADD,
-    payload: {
-      amount
-    }
-  }
-}
-
-export function increment(): Increment {
-  return {
-    type: INCREMENT
-  }
-}
-
-// state
 export type State = {
   value: number
 }
@@ -41,15 +8,15 @@ const initialState: State = {
   value: 0
 }
 
-export default (state: State = initialState, action: Action) => {
+export default (state: State = initialState, action: any) => {
   switch (action.type) {
-    case ADD: {
+    case counterConstants.ADD: {
       return {
         ...state,
         value: state.value + action.payload.amount
       }
     }
-    case INCREMENT: {
+    case counterConstants.INCREMENT: {
       return {
         ...state,
         value: state.value + 1

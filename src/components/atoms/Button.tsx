@@ -1,5 +1,5 @@
 import * as React from "react"
-import * as styles from "../../stylesheets/atoms/Button.css"
+import * as styles from "./Button.css"
 
 type Props = {
   text: string
